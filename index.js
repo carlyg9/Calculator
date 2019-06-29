@@ -13,17 +13,23 @@ const strnum2 = readline.prompt();
 const num2 = +strnum2;
 
 let answer = 0;
-if (operator == '+'){
-    answer = num1 + num2;
-} else if (operator == '-'){
-    answer = num1 - num2;
-} else if (operator == '*'){
-    answer = num1 * num2;
-} else if (operator == '/'){
-    answer = num1 / num2;
-} else {
-    console.log(operator + ' is an invalid operator.');
-    answer = 'undefined';
+switch(operator){
+    case '+':
+        answer = num1 + num2;
+        break;
+    case '-':
+        answer = num1 - num2;
+        break;
+    case '*':
+        answer = num1 * num2;
+        break;
+    case '/':
+        answer = num1 / num2;
+        break;
+    default:
+        console.log(operator + ' is an invalid operator.');
+        answer = 'undefined';
+        break;
 }
 
 
