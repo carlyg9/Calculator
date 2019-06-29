@@ -4,27 +4,35 @@ console.log('This is the calculator!');
 console.log('Please enter an operator:');
 const operator = readline.prompt();
 
-console.log('Please enter a number:');
-const strnum1 = readline.prompt();
-const num1 = +strnum1;
+console.log('How many numbers do you want to ' + operator + '?')
+const arraysize = readline.prompt();
+var arr = Array(+arraysize)
 
-console.log('Please enter another number:');
-const strnum2 = readline.prompt();
-const num2 = +strnum2;
-
-let answer = 0;
+for (var i=0; i<arr.length; i++ ){
+    console.log('Please enter number ' + (i+1) + ':');
+    arr[i] = +readline.prompt();
+    }
+let answer = arr[0];
 switch(operator){
     case '+':
-        answer = num1 + num2;
+        for (var i=1; i<arr.length; i++ ){
+            answer += arr[i]
+            }
         break;
     case '-':
-        answer = num1 - num2;
+        for (var i=1; i<arr.length; i++ ){
+            answer -= arr[i]
+            }
         break;
     case '*':
-        answer = num1 * num2;
+        for (var i=1; i<arr.length; i++ ){
+            answer *= arr[i]
+            }
         break;
     case '/':
-        answer = num1 / num2;
+        for (var i=1; i<arr.length; i++ ){
+            answer /= arr[i]
+            }
         break;
     default:
         console.log(operator + ' is an invalid operator.');
